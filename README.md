@@ -10,7 +10,11 @@ Basic usage
 Button button = new Button("Click Me");
 button.addClickListener(new Button.ClickListener() {
     public void buttonClick(ClickEvent event) {
-        ConfirmWindow confirmWindow = ConfirmWindow.showYesNo("Remove user", "What do you want remove selected user?", "Yes, remove him", "No, cancel this action");
+        String caption = "Remove user";
+        String question = "What do you want remove selected user?";
+        String yes = "Yes, remove him";
+        String no = "No, cancel this action";
+        ConfirmWindow confirmWindow = ConfirmWindow.showYesNo(caption, question, yes, no);
         confirmWindow.addDecisionListener(new AbstractDecisionListener() {
             @Override
             public void yes(ConfirmEvent event) {
