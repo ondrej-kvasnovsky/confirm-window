@@ -1,5 +1,8 @@
 package org.vaadin.addons.confirmwindow;
 
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Window;
+
 /**
  * Defines all the possible events that can happen on the {@link ConfirmWindow}.
  *
@@ -7,12 +10,12 @@ package org.vaadin.addons.confirmwindow;
  */
 public interface DecisionListener {
 
-    void yes(ConfirmEvent event);
+    void yes(Button.ClickEvent event);
 
-    void no(ConfirmEvent event);
+    void no(Button.ClickEvent event);
 
-    void cancel(ConfirmEvent event);
+    void cancel(Button.ClickEvent event);
 
-    void close(ConfirmEvent event);
+    void close(Window.CloseEvent event);
 
 }

@@ -1,5 +1,8 @@
 package org.vaadin.addons.confirmwindow;
 
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Window;
+
 /**
  * Default implementation of {@link DecisionListener}.
  *
@@ -8,18 +11,18 @@ package org.vaadin.addons.confirmwindow;
 public abstract class AbstractDecisionListener implements DecisionListener {
 
     @Override
-    public void yes(ConfirmEvent event) {
+    public void yes(Button.ClickEvent event) {
     }
 
     @Override
-    public void no(ConfirmEvent event) {
+    public void no(Button.ClickEvent event) {
     }
 
     @Override
-    public void cancel(ConfirmEvent event) {
+    public void cancel(Button.ClickEvent event) {
     }
 
     @Override
-    public void close(ConfirmEvent event) {
+    public void close(Window.CloseEvent event) {
     }
 }

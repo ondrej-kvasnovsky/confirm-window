@@ -57,16 +57,16 @@ public class ConfirmWindow extends Window {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 for (DecisionListener listener : decisionListeners) {
-                    listener.yes(new ConfirmEvent(event));
+                    listener.yes(event);
+                    close();
                 }
-                close();
             }
         });
         btnNo.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 for (DecisionListener listener : decisionListeners) {
-                    listener.no(new ConfirmEvent(event));
+                    listener.no(event);
                 }
                 close();
             }
@@ -75,7 +75,7 @@ public class ConfirmWindow extends Window {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 for (DecisionListener listener : decisionListeners) {
-                    listener.cancel(new ConfirmEvent(event));
+                    listener.cancel(event);
                 }
                 close();
             }
@@ -84,7 +84,7 @@ public class ConfirmWindow extends Window {
             @Override
             public void windowClose(Window.CloseEvent event) {
                 for (DecisionListener listener : decisionListeners) {
-                    listener.close(new ConfirmEvent(event));
+                    listener.close(event);
                 }
             }
         });
